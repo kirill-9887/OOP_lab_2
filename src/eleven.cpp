@@ -110,6 +110,10 @@ bool Eleven::equal(const Eleven& other) const noexcept {
     return !this->less(other) && !other.less(*this);
 }
 
+bool Eleven::notEqual(const Eleven& other) const noexcept {
+    return !equal(other);
+}
+
 Eleven Eleven::add(const Eleven& other) const {
     size_t res_size{std::max(_size, other._size) + 1};
     Eleven res(res_size);

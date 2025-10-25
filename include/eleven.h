@@ -26,6 +26,7 @@ public:
     bool less(const Eleven& other) const noexcept;
     bool greater(const Eleven& other) const noexcept;
     bool equal(const Eleven& other) const noexcept;
+    bool notEqual(const Eleven& other) const noexcept;
 
 public:
     Eleven add(const Eleven& other) const;

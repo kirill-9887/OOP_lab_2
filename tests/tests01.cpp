@@ -138,6 +138,32 @@ TEST(ElevenClassTest, TestEqual)
     EXPECT_FALSE(Eleven("1111111111").equal(Eleven("2222222222")));
 }
 
+TEST(ElevenClassTest, TestNotEqual)
+{
+    EXPECT_FALSE(Eleven("0").notEqual(Eleven("0")));
+    EXPECT_FALSE(Eleven("000").notEqual(Eleven("0")));
+    EXPECT_FALSE(Eleven("0").notEqual(Eleven("00000")));
+    EXPECT_FALSE(Eleven("0").notEqual(Eleven()));
+    EXPECT_FALSE(Eleven("0000000010").notEqual(Eleven("10")));
+    EXPECT_FALSE(Eleven("5453").notEqual(Eleven("5453")));
+    EXPECT_FALSE(Eleven("0aaaa").notEqual(Eleven("aaaa")));
+    EXPECT_FALSE(Eleven("aA").notEqual(Eleven("Aa")));
+    EXPECT_FALSE(Eleven("12345678900987654321aaaa0192837465123456789012345678900987654321aaaa01928374651234567890").notEqual(
+        Eleven("12345678900987654321aaaa0192837465123456789012345678900987654321aaaa01928374651234567890")));
+
+    Eleven number("123a");
+    EXPECT_FALSE(number.notEqual(number));
+
+    EXPECT_TRUE(Eleven("0").notEqual(Eleven("1")));
+    EXPECT_TRUE(Eleven("a").notEqual(Eleven("0")));
+    EXPECT_TRUE(Eleven("A").notEqual(Eleven("10")));
+    EXPECT_TRUE(Eleven("11").notEqual(Eleven("a")));
+    EXPECT_TRUE(Eleven("5453").notEqual(Eleven("5443")));
+    EXPECT_TRUE(Eleven("0aaaa").notEqual(Eleven("aaaaa")));
+    EXPECT_TRUE(Eleven("102938").notEqual(Eleven("564738")));
+    EXPECT_TRUE(Eleven("1111111111").notEqual(Eleven("2222222222")));
+}
+
 TEST(ElevenClassTest, TestGreater)
 {
     EXPECT_TRUE(Eleven("1").greater(Eleven("0")));
