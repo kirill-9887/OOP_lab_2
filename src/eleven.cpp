@@ -160,11 +160,11 @@ Eleven Eleven::copy() const {
     return *this;
 }
 
-Eleven Eleven::addWithAssign(const Eleven& other) const {
+Eleven Eleven::addEq(const Eleven& other) const {
     return this->add(other);
 }
 
-Eleven Eleven::substractWithAssign(const Eleven& other) const {
+Eleven Eleven::substractEq(const Eleven& other) const {
     return this->substract(other);
 }
 

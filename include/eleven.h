@@ -31,8 +31,8 @@ public:
     Eleven add(const Eleven& other) const;
     Eleven substract(const Eleven& other) const;
     Eleven copy() const;
-    Eleven addWithAssign(const Eleven& other) const;
-    Eleven substractWithAssign(const Eleven& other) const;
+    Eleven addEq(const Eleven& other) const;
+    Eleven substractEq(const Eleven& other) const;
 
 public:
     std::string getStr() const;
