@@ -9,6 +9,7 @@ class Eleven
 {
 
 private:
+    int const base{11};
     size_t _size;
     unsigned char *_body;
 
